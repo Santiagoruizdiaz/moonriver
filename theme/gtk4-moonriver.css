@@ -1,0 +1,82 @@
+/*
+ * Moonriver para apps GTK4/libadwaita (Archivos, Configuración, …)
+ * Negro profundo + bordó. Se instala en ~/.config/gtk-4.0/gtk.css con theme/build_theme.py
+ */
+
+:root {
+  /* Acento */
+  --accent-bg-color: #a3183a;
+  --accent-fg-color: #ffffff;
+  --accent-color: #ff7896;
+
+  /* Ventanas y contenido */
+  --window-bg-color: #0c0a0b;
+  --window-fg-color: #f3eced;
+  --view-bg-color: #080707;
+  --view-fg-color: #f3eced;
+
+  /* Barra de título */
+  --headerbar-bg-color: #120a0d;
+  --headerbar-fg-color: #f3eced;
+  --headerbar-backdrop-color: #0e090b;
+  --headerbar-shade-color: rgba(0, 0, 0, 0.7);
+  --headerbar-border-color: #2a1218;
+
+  /* Barra lateral */
+  --sidebar-bg-color: #100a0c;
+  --sidebar-fg-color: #e6dcdf;
+  --sidebar-backdrop-color: #0d090a;
+  --sidebar-shade-color: rgba(0, 0, 0, 0.6);
+  --sidebar-border-color: #2a1218;
+  --secondary-sidebar-bg-color: #0e090b;
+  --secondary-sidebar-fg-color: #e6dcdf;
+  --secondary-sidebar-backdrop-color: #0c0809;
+  --secondary-sidebar-shade-color: rgba(0, 0, 0, 0.6);
+  --secondary-sidebar-border-color: #2a1218;
+
+  /* Tarjetas, diálogos y menús */
+  --card-bg-color: #161013;
+  --card-fg-color: #f3eced;
+  --card-shade-color: rgba(0, 0, 0, 0.5);
+  --dialog-bg-color: #120c0e;
+  --dialog-fg-color: #f3eced;
+  --popover-bg-color: #140c0f;
+  --popover-fg-color: #f3eced;
+  --popover-shade-color: rgba(0, 0, 0, 0.6);
+  --thumbnail-bg-color: #1a1215;
+  --thumbnail-fg-color: #f3eced;
+}
+
+/* Fila elegida en las barras laterales (lugares de Archivos, secciones de Configuración) */
+.navigation-sidebar > row:selected,
+.navigation-sidebar > row:selected:hover {
+  background-color: alpha(#a3183a, 0.42);
+  color: #ffffff;
+}
+
+.navigation-sidebar > row:hover {
+  background-color: alpha(#7d1128, 0.22);
+}
+
+.navigation-sidebar > row:selected image {
+  color: #ffd9e1;
+}
+
+/* Elementos seleccionados en listas y grillas de archivos */
+gridview > child:selected,
+columnview > listview > row:selected,
+listview > row:selected {
+  background-color: alpha(#a3183a, 0.38);
+}
+
+/* Barra de ruta y buscador de Archivos */
+.nautilus-path-bar,
+entry:focus-within,
+searchbar > revealer > box entry {
+  outline-color: alpha(#c4234a, 0.6);
+}
+
+/* Interruptores y casillas con el bordó más vivo al pasar el mouse */
+switch:checked:hover {
+  background-color: #c4234a;
+}

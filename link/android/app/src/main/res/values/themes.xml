@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Moonriver" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/mr_black</item>
+        <item name="android:statusBarColor">@color/mr_black</item>
+        <item name="android:navigationBarColor">@color/mr_black</item>
+        <item name="android:colorAccent">@color/mr_bordo</item>
+    </style>
+
+    <style name="Theme.Moonriver.Transparent" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+</resources>

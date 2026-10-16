@@ -1,0 +1,10 @@
+{
+  "uuid": "moonriver@moonriver.dev",
+  "name": "Moonriver",
+  "description": "Escritorio Moonriver para GNOME: estética negro y bordó, menú de aplicaciones, escritorio con íconos, barra de tareas, control de agentes de IA y conexión con el teléfono.",
+  "version": 1,
+  "shell-version": [
+    "50"
+  ],
+  "url": "https://github.com/Santiagoruizdiaz/moonriver"
+}

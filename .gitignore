@@ -1,0 +1,20 @@
+# Android
+link/android/.gradle/
+link/android/.kotlin/
+link/android/build/
+link/android/app/build/
+link/android/local.properties
+*.apk
+*.aab
+*.keystore
+*.jks
+
+# Python
+__pycache__/
+*.pyc
+
+# Editores / sistema
+.idea/
+.vscode/
+*.swp
+.DS_Store

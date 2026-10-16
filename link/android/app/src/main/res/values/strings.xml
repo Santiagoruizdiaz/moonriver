@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Moonriver Link</string>
+    <string name="share_label">Enviar a la PC</string>
+    <string name="tile_label">Portapapeles → PC</string>
+</resources>

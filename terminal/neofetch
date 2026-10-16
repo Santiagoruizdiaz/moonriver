@@ -1,0 +1,3 @@
+#!/bin/sh
+# neofetch ya no se mantiene: en Moonriver, "neofetch" muestra fastfetch con la marca Moonriver.
+exec fastfetch "$@"

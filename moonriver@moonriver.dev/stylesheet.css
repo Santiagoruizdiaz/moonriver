@@ -1,0 +1,837 @@
+/*
+ * Moonriver — negro profundo + bordó
+ *
+ * Paleta (St no soporta variables CSS, se repiten a mano):
+ *   fondo        #050506   barra
+ *   superficie   #0f0e10   popovers / diálogos
+ *   elevada      #19171a   tarjetas, toggles apagados
+ *   hover        #241f23
+ *   línea        #2a2226
+ *   bordó        #7d1128   acento principal
+ *   bordó vivo   #a3183a   hover / foco
+ *   bordó hondo  #4a0a17   fondos de acento sutiles
+ *   texto        #f3eced
+ *   texto suave  #a2959a
+ */
+
+/* ───────────── Barra superior (ancho completo) ───────────── */
+
+.moonriver #panel {
+  background-color: #050506;
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #2a2226;
+  box-shadow: none;
+  height: 2.1em;
+  font-weight: 600;
+  color: #f3eced;
+}
+
+.moonriver #panel .panel-button {
+  color: #f3eced;
+  border-radius: 10px;
+  border-width: 3px;
+}
+
+.moonriver #panel .panel-button:hover,
+.moonriver #panel .panel-button:focus {
+  box-shadow: inset 0 0 0 100px rgba(163, 24, 58, 0.22);
+}
+
+.moonriver #panel .panel-button:active,
+.moonriver #panel .panel-button:checked {
+  box-shadow: inset 0 0 0 100px rgba(163, 24, 58, 0.42);
+}
+
+/* El reloj trae su propio resaltado blanco interno: lo apagamos para que
+   quede solo el bordó del botón */
+.moonriver #panel .panel-button.clock-display .clock,
+.moonriver #panel .panel-button.clock-display:hover .clock,
+.moonriver #panel .panel-button.clock-display:focus .clock,
+.moonriver #panel .panel-button.clock-display:active .clock,
+.moonriver #panel .panel-button.clock-display:checked .clock {
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.moonriver #panel .panel-button#panelActivities .workspace-dot {
+  background-color: #c4234a;
+}
+
+/* Logo de luna */
+.moonriver #panel .moonriver-button .moonriver-logo {
+  icon-size: 1.2em;
+  color: #c4234a;
+  padding: 0 4px;
+}
+
+.moonriver #panel .moonriver-button:hover .moonriver-logo,
+.moonriver #panel .moonriver-button:checked .moonriver-logo {
+  color: #ffd9e1;
+}
+
+/* Contador de agentes */
+.moonriver #panel .moonriver-agents .moonriver-agents-box {
+  spacing: 7px;
+  padding: 0 4px;
+}
+
+.moonriver #panel .moonriver-agents .moonriver-agents-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background-color: #c4234a;
+  box-shadow: 0 0 6px 1px rgba(196, 35, 74, 0.75);
+}
+
+.moonriver #panel .moonriver-agents StLabel {
+  font-weight: 600;
+  font-feature-settings: "tnum";
+}
+
+/* ───────────── Menús y popovers ───────────── */
+
+.moonriver .popup-menu {
+  color: #f3eced;
+}
+
+.moonriver .popup-menu-content,
+.moonriver .candidate-popup-content {
+  background-color: #0f0e10;
+  border: 1px solid #2a2226;
+  border-radius: 16px;
+  box-shadow: none;
+}
+
+.moonriver .popup-menu-item {
+  border-radius: 9px;
+  color: #f3eced;
+}
+
+.moonriver .popup-menu-item:hover,
+.moonriver .popup-menu-item:focus,
+.moonriver .popup-menu-item.selected {
+  background-color: #241f23;
+  color: #ffffff;
+}
+
+.moonriver .popup-menu-item:active,
+.moonriver .popup-menu-item:checked {
+  background-color: #4a0a17;
+  color: #ffffff;
+}
+
+.moonriver .popup-menu-item:insensitive {
+  color: #5f5458;
+}
+
+.moonriver .popup-sub-menu {
+  background-color: #19171a;
+  border-radius: 10px;
+}
+
+.moonriver .popup-separator-menu-item .popup-separator-menu-item-separator {
+  background-color: #2a2226;
+}
+
+.moonriver .moonriver-section-title {
+  font-size: 0.8em;
+  font-weight: 700;
+  color: #c4234a;
+  padding-top: 6px;
+  padding-bottom: 2px;
+}
+
+.moonriver .moonriver-count {
+  color: #a2959a;
+  font-feature-settings: "tnum";
+}
+
+/* ───────────── Ajustes rápidos ───────────── */
+
+.moonriver .quick-settings {
+  background-color: #0f0e10;
+  border-radius: 24px;
+}
+
+.moonriver .quick-toggle,
+.moonriver .quick-toggle-has-menu {
+  border-radius: 14px;
+}
+
+.moonriver .quick-toggle,
+.moonriver .quick-toggle-has-menu .quick-toggle-menu-button {
+  background-color: #19171a;
+  color: #f3eced;
+}
+
+.moonriver .quick-toggle:hover,
+.moonriver .quick-toggle-has-menu .quick-toggle-menu-button:hover {
+  background-color: #241f23;
+}
+
+.moonriver .quick-toggle:checked,
+.moonriver .quick-toggle-has-menu:checked .quick-toggle-menu-button {
+  background-color: #7d1128;
+  color: #ffffff;
+}
+
+.moonriver .quick-toggle:checked:hover,
+.moonriver .quick-toggle-has-menu:checked .quick-toggle-menu-button:hover {
+  background-color: #a3183a;
+}
+
+.moonriver .quick-toggle-menu {
+  background-color: #19171a;
+  border-radius: 16px;
+}
+
+.moonriver .quick-toggle-menu .header .icon {
+  background-color: #7d1128;
+  color: #ffffff;
+}
+
+.moonriver .quick-settings .icon-button,
+.moonriver .quick-settings .button {
+  background-color: #19171a;
+  color: #f3eced;
+}
+
+.moonriver .quick-settings .icon-button:hover,
+.moonriver .quick-settings .button:hover {
+  background-color: #241f23;
+}
+
+/* Controles */
+
+.moonriver .toggle-switch:checked {
+  background: #7d1128;
+  color: #ffffff;
+}
+
+.moonriver .toggle-switch:checked:hover {
+  background-color: #a3183a;
+}
+
+.moonriver .slider {
+  -barlevel-background-color: #2a2226;
+  -barlevel-active-background-color: #a3183a;
+}
+
+.moonriver .check-box:checked StIcon {
+  background-color: #7d1128;
+  color: #ffffff;
+}
+
+/* ───────────── Calendario y notificaciones ───────────── */
+
+.moonriver .datemenu-popover .popup-menu-content {
+  background-color: #0f0e10;
+}
+
+.moonriver .calendar,
+.moonriver .datemenu-today-button,
+.moonriver .events-button,
+.moonriver .world-clocks-button,
+.moonriver .weather-button {
+  background-color: #19171a;
+  border-radius: 14px;
+}
+
+.moonriver .calendar .calendar-day.calendar-today,
+.moonriver .calendar .calendar-day.calendar-today:hover,
+.moonriver .calendar .calendar-day.calendar-today:focus {
+  background-color: #7d1128;
+  color: #ffffff;
+}
+
+.moonriver .message-list {
+  border-color: #2a2226;
+}
+
+.moonriver .message {
+  background-color: #19171a;
+  border-radius: 14px;
+}
+
+.moonriver .message:second-in-stack {
+  background-color: #141214;
+}
+
+.moonriver .message:lower-in-stack {
+  background-color: #100e10;
+}
+
+.moonriver .notification-banner {
+  border: 1px solid #2a2226;
+  border-left: 3px solid #a3183a;
+  box-shadow: none;
+}
+
+.moonriver .message-list-controls .message-list-clear-button {
+  background-color: #19171a;
+}
+
+.moonriver .message-list-controls .message-list-clear-button:hover {
+  background-color: #4a0a17;
+}
+
+/* ───────────── Diálogos, OSD y alt-tab ───────────── */
+
+.moonriver .modal-dialog {
+  background-color: #0f0e10;
+  border: 1px solid #2a2226;
+  border-radius: 20px;
+}
+
+.moonriver .modal-dialog .modal-dialog-button-box .modal-dialog-button {
+  background-color: #19171a;
+}
+
+.moonriver .modal-dialog .modal-dialog-button-box .modal-dialog-button:hover {
+  background-color: #241f23;
+}
+
+.moonriver .modal-dialog .modal-dialog-button-box .modal-dialog-button.default {
+  background-color: #7d1128;
+  color: #ffffff;
+}
+
+.moonriver .osd-window {
+  background-color: rgba(15, 14, 16, 0.95);
+  border: 1px solid #2a2226;
+  border-radius: 18px;
+}
+
+.moonriver .osd-window .level {
+  -barlevel-active-background-color: #c4234a;
+  -barlevel-background-color: #2a2226;
+}
+
+.moonriver .switcher-list {
+  background-color: rgba(15, 14, 16, 0.96);
+  border: 1px solid #2a2226;
+  border-radius: 22px;
+}
+
+.moonriver .switcher-list .item-box:focus,
+.moonriver .switcher-list .item-box:selected {
+  background-color: rgba(125, 17, 40, 0.35);
+  box-shadow: inset 0 0 0 2px #a3183a !important;
+}
+
+/* ───────────── Overview: dock, búsqueda, apps ───────────── */
+
+.moonriver #overviewGroup {
+  background-color: #050506;
+}
+
+.moonriver #dash .dash-background {
+  background-color: rgba(15, 14, 16, 0.92);
+  border: 1px solid #2a2226;
+  border-radius: 22px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+}
+
+.moonriver #dash .dash-item-container .overview-tile .overview-icon,
+.moonriver #dash .dash-item-container .show-apps .overview-icon {
+  background-color: transparent;
+}
+
+.moonriver #dash .dash-item-container .overview-tile:hover .overview-icon,
+.moonriver #dash .dash-item-container .show-apps:hover .overview-icon {
+  background-color: #241f23;
+}
+
+.moonriver #dash .dash-item-container .show-apps:checked .overview-icon {
+  background-color: #4a0a17;
+}
+
+.moonriver .app-grid-running-dot {
+  background-color: #c4234a;
+}
+
+.moonriver .dash-label {
+  background-color: #0f0e10;
+  border: 1px solid #2a2226;
+  color: #f3eced;
+}
+
+.moonriver .search-entry {
+  background-color: #19171a;
+  border: 1px solid #2a2226;
+  color: #f3eced;
+}
+
+.moonriver .search-entry:focus {
+  border-color: #a3183a;
+  box-shadow: inset 0 0 0 1px #a3183a;
+}
+
+.moonriver .search-section-content {
+  background-color: #0f0e10;
+  border: 1px solid #2a2226;
+  border-radius: 18px;
+}
+
+.moonriver .overview-tile:hover,
+.moonriver .grid-search-result:hover,
+.moonriver .list-search-result:hover {
+  background-color: #241f23;
+}
+
+.moonriver .overview-tile:focus,
+.moonriver .grid-search-result:focus,
+.moonriver .list-search-result:focus {
+  background-color: rgba(125, 17, 40, 0.3);
+  box-shadow: inset 0 0 0 2px #a3183a !important;
+}
+
+.moonriver .app-folder-dialog {
+  background-color: #0f0e10;
+  border: 1px solid #2a2226;
+}
+
+.moonriver .workspace-thumbnail-indicator {
+  border-color: #c4234a;
+}
+
+.moonriver .window-caption {
+  background-color: #0f0e10;
+  border: 1px solid #2a2226;
+  color: #f3eced;
+}
+
+/* ───────────── Entradas de texto ───────────── */
+
+.moonriver StEntry {
+  selection-background-color: #7d1128;
+  selected-color: #ffffff;
+}
+
+.moonriver StEntry:focus {
+  box-shadow: inset 0 0 0 2px #a3183a;
+}
+
+/* ───────────── Íconos del escritorio ───────────── */
+
+.moonriver-desktop-item {
+  padding: 6px 4px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  color: #f3eced;
+  transition-duration: 120ms;
+}
+
+.moonriver-desktop-item:hover {
+  background-color: rgba(36, 31, 35, 0.55);
+  border-color: rgba(163, 24, 58, 0.35);
+}
+
+.moonriver-desktop-item:selected,
+.moonriver-desktop-item:focus {
+  background-color: rgba(125, 17, 40, 0.38);
+  border-color: rgba(196, 35, 74, 0.7);
+}
+
+.moonriver-desktop-icon {
+  margin-bottom: 6px;
+  icon-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.moonriver-desktop-label {
+  font-size: 0.85em;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95);
+}
+
+/* ───────────── Menús propios de Moonriver (luna, teléfono, agentes, escritorio) ───────────── */
+
+.moonriver .moonriver-menu {
+  background-color: #0c0809;
+  background-gradient-direction: vertical;
+  background-gradient-start: #140a0d;
+  background-gradient-end: #0a0708;
+  border: 1px solid #4a0a17;
+  box-shadow: none;
+}
+
+.moonriver .moonriver-menu .popup-menu-item {
+  color: #e6dcdf;
+  border-radius: 8px;
+}
+
+.moonriver .moonriver-menu .popup-menu-item .popup-menu-icon,
+.moonriver .moonriver-menu .popup-menu-item StIcon {
+  color: #c4234a;
+}
+
+.moonriver .moonriver-menu .popup-menu-item:hover,
+.moonriver .moonriver-menu .popup-menu-item:focus,
+.moonriver .moonriver-menu .popup-menu-item.selected {
+  background-color: rgba(125, 17, 40, 0.35);
+  color: #ffffff;
+}
+
+.moonriver .moonriver-menu .popup-menu-item:hover StIcon,
+.moonriver .moonriver-menu .popup-menu-item:focus StIcon {
+  color: #ff7896;
+}
+
+.moonriver .moonriver-menu .popup-menu-item:active,
+.moonriver .moonriver-menu .popup-menu-item:checked {
+  background-color: #7d1128;
+  color: #ffffff;
+}
+
+.moonriver .moonriver-menu .popup-menu-item:insensitive {
+  color: #6f4a55;
+}
+
+.moonriver .moonriver-menu .popup-menu-item:insensitive StIcon {
+  color: #4a2a33;
+}
+
+.moonriver .moonriver-menu .popup-sub-menu {
+  background-color: rgba(74, 10, 23, 0.25);
+  border-radius: 8px;
+}
+
+.moonriver .moonriver-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
+  background-color: #2a1218;
+}
+
+.moonriver .moonriver-menu .moonriver-section-title {
+  color: #c4234a;
+}
+
+.moonriver .moonriver-menu .popup-menu-arrow {
+  color: #c4234a;
+}
+
+/* ───────────── Menú de aplicaciones (compacto) ───────────── */
+
+.moonriver #panel .moonriver-launcher-button .moonriver-launcher-button-box {
+  spacing: 6px;
+  padding: 0 6px;
+}
+
+.moonriver #panel .moonriver-launcher-button {
+  box-shadow: inset 0 0 0 100px rgba(125, 17, 40, 0.45);
+}
+
+.moonriver #panel .moonriver-launcher-button:hover,
+.moonriver #panel .moonriver-launcher-button:checked {
+  box-shadow: inset 0 0 0 100px rgba(163, 24, 58, 0.75);
+}
+
+.moonriver .mr-launcher {
+  padding: 10px;
+  background-color: #0c0809;
+  background-gradient-direction: vertical;
+  background-gradient-start: #140a0d;
+  background-gradient-end: #0a0708;
+  border: 1px solid #4a0a17;
+  box-shadow: none;
+}
+
+.moonriver .mr-launcher-root {
+  spacing: 8px;
+  width: 440px;
+}
+
+/* Buscador: una línea bordó abajo */
+.moonriver .mr-launcher-search {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #4a0a17;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 4px 4px 7px;
+  color: #f3eced;
+  caret-color: #c4234a;
+  selection-background-color: #7d1128;
+}
+
+.moonriver .mr-launcher-search:focus {
+  border-bottom-color: #c4234a;
+  box-shadow: none;
+}
+
+.moonriver .mr-launcher-search-icon {
+  icon-size: 14px;
+  color: #c4234a;
+  padding-right: 6px;
+}
+
+.moonriver .mr-launcher-body {
+  spacing: 6px;
+  height: 360px;
+}
+
+.moonriver .mr-launcher-categories {
+  width: 128px;
+  spacing: 2px;
+  padding-right: 6px;
+  border-right: 1px solid #2a1218;
+}
+
+.moonriver .mr-category {
+  border-radius: 7px;
+  padding: 5px 8px;
+  font-size: 0.85em;
+  color: #a2959a;
+  transition-duration: 100ms;
+}
+
+.moonriver .mr-category-box {
+  spacing: 8px;
+}
+
+.moonriver .mr-category StIcon {
+  color: #8a1430;
+}
+
+.moonriver .mr-category:hover,
+.moonriver .mr-category:focus {
+  color: #f3eced;
+  background-color: rgba(125, 17, 40, 0.25);
+}
+
+.moonriver .mr-category:hover StIcon,
+.moonriver .mr-category:focus StIcon {
+  color: #e0405f;
+}
+
+.moonriver .mr-category:checked {
+  color: #ffffff;
+  background-color: #7d1128;
+}
+
+.moonriver .mr-category:checked StIcon {
+  color: #ffd9e1;
+}
+
+.moonriver .mr-launcher-list {
+  spacing: 0;
+  padding-right: 4px;
+}
+
+.moonriver .mr-app {
+  border-radius: 7px;
+  padding: 4px 8px;
+  color: #e6dcdf;
+  transition-duration: 80ms;
+}
+
+.moonriver .mr-app-box {
+  spacing: 10px;
+}
+
+.moonriver .mr-app-name {
+  font-size: 0.9em;
+}
+
+.moonriver .mr-app:hover {
+  background-color: rgba(125, 17, 40, 0.3);
+  color: #ffffff;
+}
+
+.moonriver .mr-app:focus {
+  background-color: rgba(163, 24, 58, 0.55);
+  color: #ffffff;
+}
+
+.moonriver .mr-launcher-scroll StScrollBar > .vhandle {
+  background-color: #7d1128;
+}
+
+.moonriver .mr-launcher-scroll StScrollBar > .vhandle:hover {
+  background-color: #a3183a;
+}
+
+.moonriver .mr-launcher-empty {
+  color: #6f4a55;
+  font-size: 0.9em;
+  padding: 20px;
+}
+
+/* ───────────── Barra de tareas (en la barra superior) ───────────── */
+
+.moonriver #panel .moonriver-taskbar {
+  spacing: 2px;
+  padding: 0 6px;
+  margin-left: 4px;
+  border-left: 1px solid #2a2226;
+}
+
+.moonriver #panel .moonriver-task {
+  padding: 3px 7px 1px;
+  border-radius: 8px;
+  transition-duration: 120ms;
+}
+
+.moonriver #panel .moonriver-task:hover {
+  background-color: rgba(163, 24, 58, 0.22);
+}
+
+.moonriver #panel .moonriver-task:active,
+.moonriver #panel .moonriver-task:checked {
+  background-color: rgba(163, 24, 58, 0.42);
+}
+
+.moonriver #panel .moonriver-task.focused {
+  background-color: rgba(125, 17, 40, 0.38);
+}
+
+.moonriver #panel .moonriver-task-box {
+  spacing: 2px;
+}
+
+.moonriver #panel .moonriver-task-dots {
+  spacing: 2px;
+  height: 3px;
+}
+
+.moonriver #panel .moonriver-task-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #7d1128;
+}
+
+.moonriver #panel .moonriver-task-dot.active {
+  width: 8px;
+  background-color: #ff7896;
+}
+
+.moonriver .moonriver-task-tooltip {
+  background-color: #0f0e10;
+  border: 1px solid #2a2226;
+  border-radius: 8px;
+  padding: 4px 10px;
+  color: #f3eced;
+  font-size: 0.9em;
+}
+
+/* ───────────── Dock ───────────── */
+
+.moonriver .moonriver-dock {
+  background-color: rgba(14, 12, 14, 0.86);
+  border: 1px solid rgba(255, 236, 240, 0.08);
+  border-top-color: rgba(255, 236, 240, 0.14);
+  border-radius: 22px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+}
+
+.moonriver .moonriver-dock-item {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.moonriver .moonriver-dock-sep {
+  background-color: rgba(255, 236, 240, 0.12);
+}
+
+.moonriver .moonriver-dock-dot {
+  border-radius: 3px;
+  background-color: #a2959a;
+}
+
+.moonriver .moonriver-dock-dot.focused {
+  background-color: #ff7896;
+  box-shadow: 0 0 6px rgba(255, 90, 125, 0.85);
+}
+
+.moonriver .moonriver-dock-tooltip {
+  background-color: rgba(18, 15, 17, 0.94);
+  border: 1px solid rgba(255, 236, 240, 0.1);
+  border-radius: 9px;
+  padding: 5px 12px;
+  color: #f3eced;
+  font-size: 0.88em;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+.moonriver-desktop-drop {
+  border-radius: 12px;
+  background-color: rgba(125, 17, 40, 0.22);
+  border: 1px solid rgba(196, 35, 74, 0.8);
+}
+
+/* ───────────── Moonriver Link (teléfono) ───────────── */
+
+.moonriver #panel .moonriver-phone .moonriver-phone-box {
+  spacing: 4px;
+}
+
+.moonriver #panel .moonriver-phone {
+  color: #6f6266;
+}
+
+.moonriver #panel .moonriver-phone.connected {
+  color: #f3eced;
+}
+
+.moonriver #panel .moonriver-phone.connected .system-status-icon {
+  color: #e0405f;
+}
+
+.moonriver .moonriver-phone-hint {
+  font-size: 0.85em;
+  color: #a2959a;
+}
+
+.moonriver .moonriver-phone-device.connected StIcon {
+  color: #e0405f;
+}
+
+.moonriver .moonriver-pair-dialog {
+  background-color: #0f0e10;
+  border: 1px solid #2a2226;
+}
+
+.moonriver .moonriver-pair-box {
+  spacing: 10px;
+  padding: 6px 12px;
+  min-width: 340px;
+}
+
+.moonriver .moonriver-pair-icon {
+  icon-size: 48px;
+  color: #c4234a;
+}
+
+.moonriver .moonriver-pair-title {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: #f3eced;
+}
+
+.moonriver .moonriver-pair-hint {
+  color: #a2959a;
+}
+
+.moonriver .moonriver-pair-code {
+  font-size: 2.6em;
+  font-weight: 800;
+  font-feature-settings: "tnum";
+  color: #ff7896;
+  padding: 10px 24px;
+  border-radius: 14px;
+  background-color: rgba(125, 17, 40, 0.3);
+  border: 1px solid #7d1128;
+}
+
+.moonriver .moonriver-send-entry {
+  min-width: 380px;
+  padding: 9px 12px;
+  border-radius: 12px;
+  background-color: #19171a;
+  border: 1px solid #2a2226;
+  color: #f3eced;
+}
